@@ -1,185 +1,40 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --primary: #6c63ff;
-  --success: #22c55e;
-  --danger: #ef4444;
-  --bg: #f4f3ff;
-  --text: #333;
-  --muted: #888;
-  --border: #ddd;
-  --radius: 10px;
-}
+/* ===================================================
+   Estilos propios — complementan Bootstrap
+   Solo definen lo que Bootstrap no cubre
+=================================================== */
 
 body {
   font-family: "Nunito", sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  background-color: #e8f8f2 !important;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Navbar */
-nav {
-  background: white;
-  border-bottom: 1px solid var(--border);
-  padding: 0 20px;
+/* Encabezado morado de la tarjeta */
+.card-header-custom {
+  background: #6c63ff;
 }
 
-.nav-inner {
-  max-width: 650px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 56px;
-}
-
-.nav-brand {
-  font-weight: 800;
-  font-size: 1.2rem;
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 4px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--muted);
-  font-weight: 600;
-  font-size: 0.9rem;
-  padding: 5px 10px;
-  border-radius: 6px;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  background: #ede9ff;
-  color: var(--primary);
-}
-.nav-links a.disabled {
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-/* Main */
-main {
-  flex: 1;
-  max-width: 650px;
-  width: 100%;
-  margin: 32px auto;
-  padding: 0 16px;
-}
-
-/* Card */
-.card {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-}
-
-.card-header {
-  background: var(--primary);
-  padding: 28px 24px;
-  color: white;
-}
-
-.card-header h1 {
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-.subtitle {
-  margin-top: 4px;
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-/* Input */
-.input-row {
-  display: flex;
-  gap: 8px;
-  padding: 20px;
-  border-bottom: 1px solid var(--border);
-}
-
-.input-row input {
-  flex: 1;
-  padding: 10px 14px;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  font-family: "Nunito", sans-serif;
-  font-size: 0.95rem;
-  outline: none;
-}
-
-.input-row input:focus {
-  border-color: var(--primary);
-}
-
-.input-row button {
-  padding: 10px 18px;
-  background: var(--primary);
-  color: white;
-  border: none;
-  border-radius: var(--radius);
-  font-family: "Nunito", sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.input-row button:hover {
-  opacity: 0.9;
-}
-
-/* Stats */
-.stats-bar {
-  padding: 8px 20px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-}
-
-/* Lista */
-#list-group {
-  list-style: none;
-  padding: 0 12px 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.list-group-item {
+/* Cada fila de tarea */
+.tarea-item {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  border: 1px solid #e5e3fa;
   background: #fafafa;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  list-style: none;
 }
 
-/* Checkbox */
+/* Círculo de verificación */
 .task-check {
   width: 20px;
   height: 20px;
   min-width: 20px;
-  border: 2px solid var(--border);
+  border: 2px solid #ddd;
   border-radius: 5px;
   cursor: pointer;
   display: flex;
@@ -191,16 +46,16 @@ main {
 }
 
 .task-check:hover {
-  border-color: var(--primary);
+  border-color: #6c63ff;
 }
 
-.list-group-item.done .task-check {
-  background: var(--success);
-  border-color: var(--success);
+.tarea-item.done .task-check {
+  background: #22c55e;
+  border-color: #22c55e;
   color: white;
 }
 
-/* Texto */
+/* Texto de la tarea */
 .task-text {
   flex: 1;
   font-size: 0.95rem;
@@ -208,55 +63,45 @@ main {
   word-break: break-word;
 }
 
-.list-group-item.done .task-text {
+.tarea-item.done .task-text {
   text-decoration: line-through;
-  color: var(--muted);
+  color: #aaa;
 }
 
-/* Botón eliminar */
+/* Botón caneca */
 .btn-delete {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--muted);
+  color: #ccc;
   font-size: 1rem;
   padding: 2px 6px;
   border-radius: 5px;
+  line-height: 1;
 }
 
 .btn-delete:hover {
-  color: var(--danger);
+  color: #ef4444;
   background: #fef2f2;
 }
 
-/* Empty state */
+/* Estado vacío */
 .empty-state {
   display: none;
-  flex-direction: column;
-  align-items: center;
-  padding: 36px 20px;
-  color: var(--muted);
-  gap: 4px;
 }
-
 .empty-state.visible {
-  display: flex;
+  display: block;
 }
 .empty-icon {
   font-size: 2.5rem;
-  margin-bottom: 6px;
-}
-.empty-state p {
-  font-weight: 700;
-  color: var(--text);
 }
 
-/* Alertas */
+/* Alertas flotantes */
 #alertContainer {
   position: fixed;
   top: 70px;
   right: 16px;
-  z-index: 999;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -265,7 +110,7 @@ main {
 
 .alert {
   padding: 10px 14px;
-  border-radius: var(--radius);
+  border-radius: 10px;
   font-weight: 700;
   font-size: 0.88rem;
   display: flex;
@@ -299,56 +144,7 @@ main {
   opacity: 1;
 }
 
-/* Footer */
-footer {
-  background: #333;
-  color: #bbb;
-  padding: 24px 20px 12px;
-  font-size: 0.88rem;
-}
-
-.footer-inner {
-  max-width: 650px;
-  margin: 0 auto 16px;
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.footer-inner strong {
-  color: white;
-  display: block;
-  margin-bottom: 4px;
-}
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.footer-links a {
-  color: #bbb;
-  text-decoration: none;
-}
-.footer-links a:hover {
-  color: white;
-}
-
-.footer-copy {
-  max-width: 650px;
-  margin: 0 auto;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
-  font-size: 0.78rem;
-  color: #777;
-}
-
-@media (max-width: 480px) {
-  .nav-links {
-    display: none;
-  }
-  .input-row {
-    flex-direction: column;
-  }
+/* Links del footer */
+.footer-link:hover {
+  color: white !important;
 }
