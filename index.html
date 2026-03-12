@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo — Lista de Tareas</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <div id="alertContainer"></div>
+
+    <nav>
+      <div class="nav-inner">
+        <div class="nav-brand">
+          <span class="brand-icon">✅</span>
+          <span class="brand-name">ToDo</span>
+        </div>
+        <ul class="nav-links"></ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="card">
+        <div class="card-header">
+          <h1>Mi Lista de Tareas</h1>
+          <p class="subtitle">Organiza tu día, un paso a la vez 🌟</p>
+        </div>
+
+        <div class="input-row">
+          <input
+            type="text"
+            id="nueva-tarea"
+            placeholder="¿Qué necesitas hacer hoy?"
+          />
+          <button onclick="adicionarTarea()">
+            <span class="btn-icon">+</span>
+            <span>Agregar</span>
+          </button>
+        </div>
+
+        <div class="stats-bar">
+          <span id="task-count">0 tareas pendientes</span>
+        </div>
+
+        <ul id="list-group">
+          <!-- Las tareas aparecen aquí -->
+        </ul>
+
+        <div id="empty-state" class="empty-state">
+          <div class="empty-icon">📋</div>
+          <p>¡No hay tareas aún!</p>
+          <small>Agrega tu primera tarea arriba</small>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <strong>Lista de Tareas ToDo</strong>
+          <p>Victoria Eugenia Patarroyo Villamil</p>
+        </div>
+        <div class="footer-links">
+          <strong>Síguenos</strong>
+          <a
+            href="https://www.linkedin.com/in/victoriaeugeniapatarroyo/"
+            target="_blank"
+          >
+            <span>🔗</span> LinkedIn
+          </a>
+          <a href="https://github.com/victoriapatarroyo" target="_blank">
+            <span>💻</span> GitHub
+          </a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        © 2025 Lista de Tareas. Todos los derechos reservados.
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
